@@ -1,0 +1,226 @@
+<!-- MAIN -->
+<main id="main" class="p-4">
+    <h1 class="h3 mb-4">Create a Referral</h1>
+    <a class="btn btn-outline-primary mb-4" href="index.html">
+        <i class="bi bi-arrow-left me-1"></i> Back to current referrals
+    </a>
+
+    <div class="card mb-4">
+        <div class="card-header">Create a Referral</div>
+        <div class="card-body">
+            <form id="referralForm">
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="mb-0">Client Information</h4>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#addClientModal">
+                                <i class="bi bi-person-plus me-1"></i> Add Client
+                            </button>
+                        </div>
+                        <div class="table-responsive mt-3">
+                            <table class="table table-sm align-middle mb-0 table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">SID</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">DOB</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="selectedClientList">
+                                    <tr id="noClientSelectedRow">
+                                        <td colspan="5" class="text-center text-muted py-3">No client added yet.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <label for="primaryJd" class="form-label">Primary JD</label>
+                                <input type="text" class="form-control" id="primaryJd" placeholder="Primary JD" required>
+                            </div>
+                            <div class="col-4">
+                                <label for="secondaryJd" class="form-label">Secondary JD</label>
+                                <input type="text" class="form-control" id="secondaryJd" placeholder="Secondary JD" required>
+                            </div>
+                            <div class="col-4">
+                                <label for="tertiaryJd" class="form-label">Tertiary JD</label>
+                                <input type="text" class="form-control" id="tertiaryJd" placeholder="Tertiary JD" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <h4>Sentencing Information</h4>
+                    <div class="col-12">
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <label for="dateOfSentencing" class="form-label">Date of Sentencing</label>
+                                <input type="text" class="form-control" id="dateOfSentencing" placeholder="Date of Sentencing" required>
+                            </div>
+                            <div class="col-4">
+                                <label for="sentenceLength" class="form-label">Sentence Length</label>
+                                <input type="text" class="form-control" id="sentenceLength" placeholder="Sentence Length" required>
+                            </div>
+                            <div class="col-4">
+                                <label for="sentenceType" class="form-label">Sentence Type</label>
+                                <input type="text" class="form-control" id="sentenceType" placeholder="Sentence Type" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <label class="form-label d-block">Crime of Violence?</label>
+                                <div class="btn-group" role="group" aria-label="Crime of Violence">
+                                    <input type="radio" class="btn-check" name="crimeOfViolence" id="crimeOfViolenceYes" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="crimeOfViolenceYes">Yes</label>
+                                    <input type="radio" class="btn-check" name="crimeOfViolence" id="crimeOfViolenceNo" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="crimeOfViolenceNo">No</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label d-block">Sex Offender?</label>
+                                <div class="btn-group" role="group" aria-label="Sex Offender">
+                                    <input type="radio" class="btn-check" name="sexOffender" id="sexOffenderYes" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="sexOffenderYes">Yes</label>
+                                    <input type="radio" class="btn-check" name="sexOffender" id="sexOffenderNo" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="sexOffenderNo">No</label>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label d-block">Victim Notification?</label>
+                                <div class="btn-group" role="group" aria-label="Victim Notification">
+                                    <input type="radio" class="btn-check" name="victimNotification" id="victimNotificationYes" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="victimNotificationYes">Yes</label>
+                                    <input type="radio" class="btn-check" name="victimNotification" id="victimNotificationNo" autocomplete="off" checked>
+                                    <label class="btn btn-outline-primary" for="victimNotificationNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="notes" class="form-label">Referral Notes</label>
+                        <textarea class="form-control" id="notes" rows="3"></textarea>
+                    </div>
+                </div>
+                    
+                <div class="row">
+                    <div class="col-12 form-group">
+                        <h4>Documents</h4>
+                        <button type="button" class="btn btn-outline-primary" id="uploadDocumentsBtn">
+                            <i class="bi bi-upload me-1"></i> Upload Documents
+                        </button>
+                        <div class="table-responsive mt-3">
+                            <table class="table table-sm align-middle mb-0 table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Document Name</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Uploaded</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="documentList">
+                                    <tr id="noDocumentsRow">
+                                        <td colspan="4" class="text-center text-muted py-3">No documents uploaded yet.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-send me-1"></i> Create Referral
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADD CLIENT MODAL -->
+    <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addClientModalLabel">Add Client</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="clientSid" class="form-label">SID</label>
+                        <input type="text" class="form-control" id="clientSid"
+                            placeholder="Start typing a SID to search…" autocomplete="off">
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0 table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">SID</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">DOB</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientSearchResults">
+                                <tr id="noClientResultsRow">
+                                    <td colspan="5" class="text-center text-muted py-4">
+                                        Start typing a SID to search for clients.
+                                    </td>
+                                </tr>
+                                <!-- Placeholder sample results (no database connected yet) -->
+                                <tr>
+                                    <td>SID-100234</td>
+                                    <td>Marcus</td>
+                                    <td>Whitfield</td>
+                                    <td>1988-04-12</td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Select Client">
+                                            <i class="bi bi-check-lg me-1"></i> Select
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SID-100987</td>
+                                    <td>Alicia</td>
+                                    <td>Fernandez</td>
+                                    <td>1995-09-30</td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Select Client">
+                                            <i class="bi bi-check-lg me-1"></i> Select
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SID-101455</td>
+                                    <td>Devon</td>
+                                    <td>Nakamura</td>
+                                    <td>1979-01-22</td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Select Client">
+                                            <i class="bi bi-check-lg me-1"></i> Select
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Add New Client</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
