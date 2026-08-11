@@ -1,5 +1,5 @@
-var outOfStateCheckbox = document.getElementById('outOfStateCheckbox') as HTMLInputElement;
-var caseNumberInput = document.getElementById('CaseNumber') as HTMLInputElement;
+var outOfStateCheckbox = document.getElementById('outOfStateCheckbox');
+var caseNumberInput = document.getElementById('CaseNumber');
 outOfStateCheckbox.addEventListener('click', selectOutOfState);
 
 
