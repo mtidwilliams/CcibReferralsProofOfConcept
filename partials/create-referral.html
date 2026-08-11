@@ -114,7 +114,8 @@
                 <div class="row">
                     <div class="col-12 form-group">
                         <h4>Documents</h4>
-                        <button type="button" class="btn btn-outline-primary" id="uploadDocumentsBtn">
+                        <button type="button" class="btn btn-outline-primary" id="uploadDocumentsBtn"
+                            data-bs-toggle="modal" data-bs-target="#uploadDocumentModal">
                             <i class="bi bi-upload me-1"></i> Upload Documents
                         </button>
                         <div class="table-responsive mt-3">
@@ -218,6 +219,40 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary">Add New Client</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPLOAD DOCUMENT MODAL -->
+    <div class="modal fade" id="uploadDocumentModal" tabindex="-1" aria-labelledby="uploadDocumentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadDocumentModalLabel">Upload Document</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="documentType" class="form-label">Document Type</label>
+                        <select class="form-select" id="documentType">
+                            <option value="" selected disabled>Select a document type…</option>
+                            <option value="court-order">Court Order</option>
+                            <option value="sentencing-report">Sentencing Report</option>
+                            <option value="psi">Pre-Sentence Investigation</option>
+                            <option value="identification">Identification</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="documentFile" class="form-label">File</label>
+                        <input type="file" class="form-control" id="documentFile">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Upload Document</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
