@@ -59,49 +59,7 @@
                 <div class="row">
                     <div class="col-12 form-group">
                         <h4>Sentencing Information</h4>
-                        <div class="row mb-3">
-                            <div class="col-4">
-                                <label for="dateOfSentencing" class="form-label">Date of Sentencing</label>
-                                <input type="date" class="form-control" id="dateOfSentencing" placeholder="Date of Sentencing" required>
-                            </div>
-                            <div class="col-4">
-                                <label for="sentenceLength" class="form-label">Sentence Length</label>
-                                <input type="number" class="form-control" id="sentenceLength" placeholder="Sentence Length" required>
-                            </div>
-                            <div class="col-4">
-                                <label for="sentenceType" class="form-label">Sentence Type</label>
-                                <input type="text" class="form-control" id="sentenceType" placeholder="Sentence Type" required>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-4">
-                                <label class="form-label d-block">Crime of Violence?</label>
-                                <div class="btn-group" role="group" aria-label="Crime of Violence">
-                                    <input type="radio" class="btn-check" name="crimeOfViolence" id="crimeOfViolenceYes" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="crimeOfViolenceYes">Yes</label>
-                                    <input type="radio" class="btn-check" name="crimeOfViolence" id="crimeOfViolenceNo" autocomplete="off" checked>
-                                    <label class="btn btn-outline-primary" for="crimeOfViolenceNo">No</label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <label class="form-label d-block">Sex Offender?</label>
-                                <div class="btn-group" role="group" aria-label="Sex Offender">
-                                    <input type="radio" class="btn-check" name="sexOffender" id="sexOffenderYes" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="sexOffenderYes">Yes</label>
-                                    <input type="radio" class="btn-check" name="sexOffender" id="sexOffenderNo" autocomplete="off" checked>
-                                    <label class="btn btn-outline-primary" for="sexOffenderNo">No</label>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <label class="form-label d-block">Victim Notification?</label>
-                                <div class="btn-group" role="group" aria-label="Victim Notification">
-                                    <input type="radio" class="btn-check" name="victimNotification" id="victimNotificationYes" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="victimNotificationYes">Yes</label>
-                                    <input type="radio" class="btn-check" name="victimNotification" id="victimNotificationNo" autocomplete="off" checked>
-                                    <label class="btn btn-outline-primary" for="victimNotificationNo">No</label>
-                                </div>
-                            </div>
-                        </div>
+                        <partial data-include="partials/sentencing-information.html"></partial>
                     </div>
                 </div>
                 <div class="row mb-3">

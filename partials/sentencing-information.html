@@ -1,0 +1,226 @@
+<div class="row mb-3">
+    <div class="col">
+        <input id="outOfStateCheckbox" type="checkbox" name="OutOfStateCase" value="true">
+        <label for="outOfStateCheckbox">Out of State Case</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="CaseNumber">Case Number</label>
+            <input class="form-control" type="text" id="CaseNumber" name="CaseNumber">
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="CountyCode">County</label>
+            <select class="form-control" id="CountyCode" name="CountyCode" size="1">
+                <option disabled="" selected="" value="">Select One</option>
+                <option value="001">Adams</option>
+                <option value="002">Alamosa</option>
+                <option value="003">Arapahoe</option>
+                <option value="004">Archuleta</option>
+                <option value="005">Baca</option>
+                <option value="006">Bent</option>
+                <option value="007">Boulder</option>
+                <option value="008">Chaffee</option>
+                <option value="009">Cheyenne</option>
+                <option value="010">Clear Creek</option>
+                <option value="011">Conejos</option>
+                <option value="012">Costilla</option>
+                <option value="013">Crowley</option>
+                <option value="014">Custer</option>
+                <option value="015">Delta</option>
+                <option value="016">Denver</option>
+                <option value="017">Dolores</option>
+                <option value="018">Douglas</option>
+                <option value="019">Eagle</option>
+                <option value="020">Elbert</option>
+                <option value="021">El Paso</option>
+                <option value="022">Fremont</option>
+                <option value="023">Garfield</option>
+                <option value="024">Gilpin</option>
+                <option value="025">Grand</option>
+                <option value="026">Gunnison</option>
+                <option value="027">Hinsdale</option>
+                <option value="028">Huerfano</option>
+                <option value="029">Jackson</option>
+                <option value="030">Jefferson</option>
+                <option value="031">Kiowa</option>
+                <option value="032">Kit Carson</option>
+                <option value="033">Lake</option>
+                <option value="034">La Plata</option>
+                <option value="035">Larimer</option>
+                <option value="036">Las Animas</option>
+                <option value="037">Lincoln</option>
+                <option value="038">Logan</option>
+                <option value="039">Mesa</option>
+                <option value="040">Mineral</option>
+                <option value="041">Moffat</option>
+                <option value="042">Montezuma</option>
+                <option value="043">Montrose</option>
+                <option selected="selected" value="044">Morgan</option>
+                <option value="045">Otero</option>
+                <option value="046">Ouray</option>
+                <option value="047">Park</option>
+                <option value="048">Phillips</option>
+                <option value="049">Pitkin</option>
+                <option value="050">Prowers</option>
+                <option value="051">Pueblo</option>
+                <option value="052">Rio Blanco</option>
+                <option value="053">Rio Grande</option>
+                <option value="054">Routt</option>
+                <option value="055">Saguache</option>
+                <option value="056">San Juan</option>
+                <option value="057">San Miguel</option>
+                <option value="058">Sedgwick</option>
+                <option value="059">Summit</option>
+                <option value="060">Teller</option>
+                <option value="061">Washington</option>
+                <option value="062">Weld</option>
+                <option value="063">Yuma</option>
+                <option value="064">Garfield (Rifle)</option>
+                <option value="065">Rio Blanco (Rangley)</option>
+                <option value="066">Eagle (Basalt)</option>
+                <option value="067">Montrose (Nucla)</option>
+                <option value="070">Arapahoe (Aurora)</option>
+                <option value="071">Arapahoe (Littleton)</option>
+                <option value="080">Broomfield</option>
+                <option value="085">Larimer (Loveland)</option>
+                <option value="087">Boulder (Longmont)</option>
+                <option value="OOS">Out of State</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="OffenseName">Offense Name</label>
+            <input class="form-control" type="text" id="OffenseName" name="OffenseName" value="Trespassing">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="DcjOffenseCodeId">DCJ Offense</label>
+            <select class="form-control" id="DcjOffenseCodeId" name="DcjOffenseCodeId" size="1">
+                <option disabled="" selected="" value="">Select One</option>
+                <option value="44d59e09-2027-4ebc-b255-cf1f781cfb2a">Arson</option>
+                <option value="97334f6f-bc39-4840-9a3f-b2e5b9285483">Assault/Menacing</option>
+                <option selected="selected" value="6506c1e2-c95f-4241-85d1-2bb755095ddf">Burglary/Criminal Trespass</option>
+                <option value="a6de572f-bb05-4c8a-81e2-10ce12e819bc">Child Abuse/Delinquency minor</option>
+                <option value="0fc70304-52e7-4ef4-ad14-ab14a9aec515">Controlled Substance</option>
+                <option value="82591805-827d-4d11-bdb6-d3d56fcfed36">Criminal Mischief</option>
+                <option value="2521e5e0-6b3b-4a50-afd9-ead97ebb257b">Driving/HTO/DUR/Eluding</option>
+                <option value="bbab2dd2-d8ff-4c8b-a8f2-31acb3b7f306">Escape</option>
+                <option value="668c0f95-923f-4085-84cc-9fd9fcc54948">Forgery/Forged Instrument</option>
+                <option value="d0b7a0f4-6739-4194-ac73-f3cf9f0c3b03">Fraud/False Info to Pawnbroker</option>
+                <option value="5c9354ec-725c-4162-9d43-812e863bb11d">Habitual Criminal</option>
+                <option value="287a6e4b-54f5-4272-9a94-8ba3e1789a2d">Homicide-</option>
+                <option value="a902cc75-777d-4101-8952-c44c94a2ef0b">Identity Theft/Crim Impersonat</option>
+                <option value="1cea4098-2417-4878-9bb0-5872abec3bd5">Intimidation</option>
+                <option value="81ba4616-de8d-4435-bf1e-3a852a98b793">Kidnapping</option>
+                <option value="5052916c-4506-46fe-a651-d6b4ace0e75b">Misdemeanor offense</option>
+                <option value="e3be14ea-84cf-4ba1-ba2d-2985b07b1697">Motor Vehicle</option>
+                <option value="52152294-2ead-4d4c-aad1-a02b95e4cb36">Organized Crime</option>
+                <option value="b532f5c3-eea6-4981-975c-f5cfa848d55f">Other</option>
+                <option value="eb205e2a-4f0c-40db-b32e-d13ef5e109aa">Robbery</option>
+                <option value="61242215-f3cc-46e6-9a68-e8780cc220cd">Sex Assault</option>
+                <option value="341479ec-e95e-45e2-9965-e216b3211ea3">Theft</option>
+                <option value="eb095aa2-d620-4709-96bd-d2cb3610ee28">Weapons</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label for="CrimeClassCodeId">Crime Class</label>
+            <select class="form-control" id="CrimeClassCodeId" name="CrimeClassCodeId" size="1">
+                <option disabled="" selected="" value="">Select One</option>
+                <option value="dd986f66-9c0c-4f66-8c63-bc7774d5bd84">DF1</option>
+                <option value="a2c33af4-8e9b-4773-a088-7d657bbccb50">DF2</option>
+                <option value="033655b4-ff7e-4985-9e61-17f0b4465af9">DF3</option>
+                <option value="99c0c6b9-bce1-4a3f-8e63-0a4b30470cff">DF4</option>
+                <option value="b62e7a33-acdb-4646-8689-9aa2600ed70d">DM1</option>
+                <option value="a87d1f38-29a1-4cf4-9eb0-44c635ef3040">DM2</option>
+                <option value="11624e73-8556-4c7d-bbcd-3621aacc3884">F</option>
+                <option selected="selected" value="6cf5f1a0-038d-4c20-895b-d44b2c622ec0">F1</option>
+                <option value="b9265f12-96ca-4390-867c-8fbcae4c4c44">F2</option>
+                <option value="0e9a0f88-3f0e-4dd9-856b-2827616b94b1">F3</option>
+                <option value="6fd410f3-9774-4f97-8401-e92a1f89be32">F4</option>
+                <option value="7b64bdff-4ba3-481a-acf8-578aebcd0779">F5</option>
+                <option value="57db4d9c-dad5-4710-a5b3-a3de08ee7fbd">F6</option>
+                <option value="258955f9-80da-4fdd-a4a1-8f306789cb15">M</option>
+                <option value="2d01bdec-f2ca-4aac-9d9c-fd19cfb2d178">M1</option>
+                <option value="f49eba64-58c9-4963-9b18-183c55115595">M2</option>
+                <option value="02c4b668-54f3-42ed-a9f9-b2c9b30b7f26">M3</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label class="d-block" for="SentenceLength">Sentence Length</label>
+            <div class="row">
+                <div class="col pr-0">
+                    <input type="number" min="0" class="form-control" placeholder="Sentence Length" id="SentenceLength" name="SentenceLength" value="2">
+                </div>
+                <div class="col pl-0">
+                    <select class="form-control" aria-label="sentence period length" id="SentenceLengthPeriodId" name="SentenceLengthPeriodId" size="1">
+                        <option disabled="" selected="" value="">Select One</option>
+                        <option value="1812f725-f206-ed11-8cc1-005056a6372d">Days</option>
+                        <option value="1912f725-f206-ed11-8cc1-005056a6372d">Months</option>
+                        <option selected="selected" value="1a12f725-f206-ed11-8cc1-005056a6372d">Years</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="row mb-3">
+        <div class="col-6">
+            <label for="dateOfSentencing" class="form-label">Date of Sentencing</label>
+            <input type="date" class="form-control" id="dateOfSentencing" placeholder="Date of Sentencing" required>
+        </div>
+        <div class="col-6">
+            <label for="sentenceType" class="form-label">Sentence Type</label>
+            <input type="text" class="form-control" id="sentenceType" placeholder="Sentence Type" required>
+        </div>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-4">
+        <label class="form-label d-block">Crime of Violence?</label>
+        <div class="btn-group" role="group" aria-label="Crime of Violence">
+            <input type="radio" class="btn-check" name="crimeOfViolence" id="crimeOfViolenceYes" autocomplete="off">
+            <label class="btn btn-outline-primary" for="crimeOfViolenceYes">Yes</label>
+            <input type="radio" class="btn-check" name="crimeOfViolence" id="crimeOfViolenceNo" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="crimeOfViolenceNo">No</label>
+        </div>
+    </div>
+    <div class="col-4">
+        <label class="form-label d-block">Sex Offender?</label>
+        <div class="btn-group" role="group" aria-label="Sex Offender">
+            <input type="radio" class="btn-check" name="sexOffender" id="sexOffenderYes" autocomplete="off">
+            <label class="btn btn-outline-primary" for="sexOffenderYes">Yes</label>
+            <input type="radio" class="btn-check" name="sexOffender" id="sexOffenderNo" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="sexOffenderNo">No</label>
+        </div>
+    </div>
+    <div class="col-4">
+        <label class="form-label d-block">Victim Notification?</label>
+        <div class="btn-group" role="group" aria-label="Victim Notification">
+            <input type="radio" class="btn-check" name="victimNotification" id="victimNotificationYes" autocomplete="off">
+            <label class="btn btn-outline-primary" for="victimNotificationYes">Yes</label>
+            <input type="radio" class="btn-check" name="victimNotification" id="victimNotificationNo" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="victimNotificationNo">No</label>
+        </div>
+    </div>
+</div>
+<div class="d-flex mt-2 mb-4">
+    <div class="flex-fill text-end">
+        <a class="btn btn-outline-primary me-1">Cancel</a>
+        <button type="button" class="btn btn-primary">Save</button>
+    </div>
+</div>
+<script src="sentencing-information.ts"></script>
