@@ -41,20 +41,17 @@
                 <div class="row">
                     <div class="col-12 form-group">
                         <h4>Referral Destination</h4>
-                        <div class="row mb-3">
-                            <div class="col-4">
-                                <label for="primaryJd" class="form-label">Primary JD</label>
-                                <input type="text" class="form-control" id="primaryJd" placeholder="Primary JD" required>
-                            </div>
-                            <div class="col-4">
-                                <label for="secondaryJd" class="form-label">Secondary JD</label>
-                                <input type="text" class="form-control" id="secondaryJd" placeholder="Secondary JD" required>
-                            </div>
-                            <div class="col-4">
-                                <label for="tertiaryJd" class="form-label">Tertiary JD</label>
-                                <input type="text" class="form-control" id="tertiaryJd" placeholder="Tertiary JD" required>
+                        <div id="jdContainer">
+                            <div class="row mb-3 jd-row">
+                                <div class="col-4">
+                                    <label for="jd1" class="form-label">First JD</label>
+                                    <input type="text" class="form-control jd-input" id="jd1" placeholder="First JD" required>
+                                </div>
                             </div>
                         </div>
+                        <button type="button" class="btn btn-outline-primary mb-3" id="addJdBtn">
+                            <i class="bi bi-plus-lg me-1"></i> Add JD
+                        </button>
                     </div>
                 </div>
                 <div class="row">
