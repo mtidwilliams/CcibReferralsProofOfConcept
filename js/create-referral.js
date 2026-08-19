@@ -13,15 +13,12 @@ document.addEventListener('partials:loaded', () => {
     const ordinalLabel = (index) => ordinals[index] || `JD ${index + 1}`;
 
     function addJdInput() {
-        const index = container.querySelectorAll('.jd-row').length;
+        const index = container.querySelectorAll('.jd-col').length;
         const label = `${ordinalLabel(index)} JD`;
         const id = `jd${index + 1}`;
 
-        const row = document.createElement('div');
-        row.className = 'row mb-3 jd-row';
-
         const col = document.createElement('div');
-        col.className = 'col-4';
+        col.className = 'col-4 jd-col';
 
         const labelEl = document.createElement('label');
         labelEl.className = 'form-label';
@@ -37,8 +34,7 @@ document.addEventListener('partials:loaded', () => {
 
         col.appendChild(labelEl);
         col.appendChild(input);
-        row.appendChild(col);
-        container.appendChild(row);
+        container.appendChild(col);
     }
 
     addBtn.addEventListener('click', addJdInput);
