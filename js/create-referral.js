@@ -1,11 +1,11 @@
 // Dynamic referral recipient dropdowns for the create-referral form.
-// The "Send to program" checkbox switches every dropdown between JD numbers and program (county) names.
+// The "Add Recipient" dropdown lets the user add either a Program recipient or a
+// Judicial District recipient; each recipient's select is filled with the matching list.
 document.addEventListener('partials:loaded', () => {
     const container = document.getElementById('jdContainer');
     const addBtn = document.getElementById('addRecipientBtn');
-    const addLabel = addBtn?.querySelector('[data-add-label]');
-    const programToggle = document.getElementById('sendToProgramToggle');
-    if (!container || !addBtn || !programToggle) return;
+    const emptyRow = document.getElementById('noRecipientRow');
+    if (!container || !addBtn) return;
 
     const ordinals = [
         'First', 'Second', 'Third', 'Fourth', 'Fifth',
@@ -16,23 +16,34 @@ document.addEventListener('partials:loaded', () => {
         'Larimer', 'Douglas', 'Boulder', 'Weld', 'Pueblo'
     ];
 
-    const isProgram = () => programToggle.checked;
+    const recipientTypes = {
+        program: {
+            label: 'Program',
+            placeholder: 'Select a program…',
+            values: () => counties
+        },
+        jd: {
+            label: 'Judicial District',
+            placeholder: 'Select a judicial district…',
+            values: () => Array.from({ length: 23 }, (_, i) => String(i + 1))
+        }
+    };
+
     const ordinalLabel = (index) => ordinals[index] || `${index + 1}`;
 
-    const optionValues = () =>
-        isProgram() ? counties : Array.from({ length: 23 }, (_, i) => String(i + 1));
-
-    function populateSelect(select) {
+    function populateSelect(select, type) {
+        const config = recipientTypes[type];
         select.innerHTML = '';
-        const placeholder = new Option(`Select a recipient…`, '', true, true);
+        const placeholder = new Option(config.placeholder, '', true, true);
         placeholder.disabled = true;
         select.add(placeholder);
-        optionValues().forEach((value) => select.add(new Option(value, value)));
+        config.values().forEach((value) => select.add(new Option(value, value)));
     }
 
-    function createColumn() {
+    function createColumn(type) {
         const col = document.createElement('div');
         col.className = 'col-4 jd-col';
+        col.dataset.recipientType = type;
 
         const label = document.createElement('label');
         label.className = 'form-label';
@@ -42,6 +53,7 @@ document.addEventListener('partials:loaded', () => {
 
         const select = document.createElement('select');
         select.className = 'form-select jd-input';
+        select.required = true;
 
         const removeBtn = document.createElement('button');
         removeBtn.type = 'button';
@@ -55,29 +67,29 @@ document.addEventListener('partials:loaded', () => {
 
         group.append(select, removeBtn);
         col.append(label, group);
-        populateSelect(select);
+        populateSelect(select, type);
         return col;
     }
 
-    // Re-labels and re-ids every column to match its current position and mode.
+    // Re-labels and re-ids every column to match its current position and recipient type.
     function renumber() {
-        container.querySelectorAll('.jd-col').forEach((col, i) => {
+        const columns = container.querySelectorAll('.jd-col');
+        if (emptyRow) emptyRow.classList.toggle('d-none', columns.length > 0);
+        columns.forEach((col, i) => {
             const id = `recipient${i + 1}`;
+            const type = col.dataset.recipientType;
             const label = col.querySelector('.form-label');
             const select = col.querySelector('.jd-input');
-            label.textContent = `${ordinalLabel(i)} Recipient`;
+            label.textContent = `${ordinalLabel(i)} Recipient (${recipientTypes[type].label})`;
             label.setAttribute('for', id);
             select.id = id;
         });
     }
 
-    addBtn.addEventListener('click', () => {
-        container.appendChild(createColumn());
-        renumber();
-    });
-
-    programToggle.addEventListener('change', () => {
-        container.querySelectorAll('.jd-input').forEach(populateSelect);
-        renumber();
+    addBtn.closest('.dropdown').querySelectorAll('[data-recipient-type]').forEach((item) => {
+        item.addEventListener('click', () => {
+            container.appendChild(createColumn(item.dataset.recipientType));
+            renumber();
+        });
     });
 });
