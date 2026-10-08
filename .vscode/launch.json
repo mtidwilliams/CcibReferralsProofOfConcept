@@ -7,9 +7,11 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "name": "Serve demo & launch Chrome",
+            "url": "http://localhost:8843/index.html",
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "serve-demo",
+            "postDebugTask": "stop-serve-demo"
         }
     ]
 }
