@@ -1,0 +1,162 @@
+<!-- MAIN -->
+<main id="main" class="p-4">
+    <h1 class="h3 mb-2">Workflow Management</h1>
+    <p class="text-muted mb-4">
+        Define the steps a referral must move through before it results in a client placement.
+        Changes you make here create a new workflow version that takes effect on a future date —
+        the currently active workflow keeps running until then.
+    </p>
+
+    <!-- SCHEDULED VERSION BANNER -->
+    <div id="scheduledBanner" class="alert alert-info d-none d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <i class="bi bi-calendar-event me-1"></i>
+            <span id="scheduledBannerText">A new workflow version is scheduled.</span>
+        </div>
+        <div class="text-nowrap">
+            <button type="button" class="btn btn-sm btn-outline-primary me-2" id="editScheduledBtn">
+                <i class="bi bi-pencil me-1"></i> Edit Scheduled Version
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-success me-2" id="activateScheduledBtn">
+                <i class="bi bi-fast-forward-fill me-1"></i> Simulate Date Reached
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-danger" id="cancelScheduledBtn">
+                <i class="bi bi-x-lg me-1"></i> Cancel
+            </button>
+        </div>
+    </div>
+
+    <!-- ACTIVE WORKFLOW -->
+    <div class="card mb-4" id="activeWorkflowCard">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span><i class="bi bi-diagram-3-fill me-1"></i> Active Workflow</span>
+            <span class="badge bg-success" id="activeWorkflowEffectiveBadge">In effect since —</span>
+        </div>
+        <div class="card-body">
+            <h5 class="mb-1" id="activeWorkflowDescription">Default Workflow</h5>
+            <p class="text-muted small mb-3">This is the workflow currently applied to new referrals.</p>
+            <div id="activeWorkflowFlow" class="text-center overflow-auto"></div>
+        </div>
+        <div class="card-footer text-end">
+            <button type="button" class="btn btn-primary" id="modifyWorkflowBtn">
+                <i class="bi bi-pencil-square me-1"></i> Modify Workflow
+            </button>
+        </div>
+    </div>
+
+    <!-- DRAFT WORKFLOW (edit mode) -->
+    <div class="card mb-4 d-none" id="draftWorkflowCard">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span><i class="bi bi-pencil-square me-1"></i> New Workflow Version (Draft)</span>
+        </div>
+        <div class="card-body">
+            <div class="row g-3 mb-3">
+                <div class="col-md-8">
+                    <label for="draftDescription" class="form-label">Workflow Description</label>
+                    <input type="text" class="form-control" id="draftDescription" placeholder="e.g. Default Workflow">
+                </div>
+                <div class="col-md-4">
+                    <label for="draftEffectiveDate" class="form-label">Effective Date</label>
+                    <input type="date" class="form-control" id="draftEffectiveDate">
+                    <div class="form-text">Must be a future date. The new version takes effect on this date.</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0">Workflow Steps <span class="small text-muted fw-normal">(click a step to edit or delete it)</span></h6>
+                <button type="button" class="btn btn-sm btn-outline-primary" id="addStepBtn">
+                    <i class="bi bi-plus-lg me-1"></i> Add Step
+                </button>
+            </div>
+
+            <div id="draftUnattachedWarning" class="alert alert-warning small d-none">
+                <i class="bi bi-exclamation-triangle-fill me-1"></i>
+                <span id="draftUnattachedCount">0</span> step(s) aren't connected to the workflow (shown with a dashed
+                red border). Route another step to them, or mark one as the first step.
+            </div>
+
+            <div id="draftWorkflowFlow" class="text-center overflow-auto"></div>
+        </div>
+        <div class="card-footer text-end">
+            <button type="button" class="btn btn-outline-secondary me-2" id="cancelDraftBtn">Cancel</button>
+            <button type="button" class="btn btn-success" id="scheduleDraftBtn">
+                <i class="bi bi-calendar-check me-1"></i> Schedule This Version
+            </button>
+        </div>
+    </div>
+
+    <!-- STEP EDITOR MODAL -->
+    <div class="modal fade" id="stepModal" tabindex="-1" aria-labelledby="stepModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="stepModalLabel">Add Workflow Step</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="stepEditId">
+                    <div class="mb-3">
+                        <label for="stepType" class="form-label">Workflow Step Type</label>
+                        <select class="form-select" id="stepType">
+                            <option value="approval">Approval (Approved / Denied)</option>
+                            <option value="yesno">Yes / No</option>
+                            <option value="notify">Notify</option>
+                            <option value="waitlist">Waitlist</option>
+                            <option value="archive">Archive (ends the workflow)</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="stepDescription" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="stepDescription"
+                            placeholder="e.g. Program Director Approval">
+                    </div>
+                    <div class="mb-3">
+                        <label for="stepHelpText" class="form-label">Help Text <span class="text-muted">(optional)</span></label>
+                        <textarea class="form-control" id="stepHelpText" rows="2"
+                            placeholder="Additional guidance shown to the person acting on this step"></textarea>
+                    </div>
+
+                    <div class="mb-3" id="responsiblePartyGroup">
+                        <label for="stepResponsibleParty" class="form-label">Responsible Party</label>
+                        <input type="text" class="form-control" id="stepResponsibleParty"
+                            placeholder="Name or email of who acts on this step">
+                    </div>
+
+                    <div class="mb-3 d-none" id="notifyEmailGroup">
+                        <label for="stepNotifyEmail" class="form-label">Notify Email Address</label>
+                        <input type="email" class="form-control" id="stepNotifyEmail" placeholder="name@example.com">
+                    </div>
+
+                    <div class="mb-3" id="singleNextGroup">
+                        <label for="stepNextSingle" class="form-label">Next Step</label>
+                        <select class="form-select" id="stepNextSingle"></select>
+                    </div>
+
+                    <div class="d-none" id="branchNextGroup">
+                        <div class="mb-3">
+                            <label for="stepNextPositive" class="form-label" id="branchLabelPositive">If
+                                Approved</label>
+                            <select class="form-select" id="stepNextPositive"></select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="stepNextNegative" class="form-label" id="branchLabelNegative">If Denied</label>
+                            <select class="form-select" id="stepNextNegative"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="stepIsFirst">
+                        <label class="form-check-label" for="stepIsFirst">First step (runs when the referral is created)</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger me-auto d-none" id="deleteStepBtn">
+                        <i class="bi bi-trash me-1"></i> Delete Step
+                    </button>
+                    <button type="button" class="btn btn-primary" id="saveStepBtn">Save Step</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

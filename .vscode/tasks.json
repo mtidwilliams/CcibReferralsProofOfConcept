@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "serve-demo",
+            "type": "shell",
+            "command": "npx --yes serve --no-clipboard -l 8843 .",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "serve",
+                "pattern": { "regexp": "^__never_matches__$" },
+                "background": {
+                    "activeBegins": true,
+                    "beginsPattern": "serve",
+                    "endsPattern": "(Serving!|Accepting connections)"
+                }
+            }
+        },
+        {
+            "label": "stop-serve-demo",
+            "type": "shell",
+            "command": "echo ${input:terminateServeDemo}",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "terminateServeDemo",
+            "type": "command",
+            "command": "workbench.action.tasks.terminate",
+            "args": "serve-demo"
+        }
+    ]
+}
