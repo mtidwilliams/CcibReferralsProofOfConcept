@@ -1,184 +1,222 @@
 <!-- SUBMITTED REFERRALS -->
+<ul class="nav nav-tabs referral-tabs" id="referralTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="current-referrals-tab" data-bs-toggle="tab"
+            data-bs-target="#current-referrals-pane" type="button" role="tab" aria-controls="current-referrals-pane"
+            aria-selected="true">
+            Current Referrals
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="waiting-list-tab" data-bs-toggle="tab" data-bs-target="#waiting-list-pane"
+            type="button" role="tab" aria-controls="waiting-list-pane" aria-selected="false">
+            Waiting List
+        </button>
+    </li>
+</ul>
 <div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
-        <span>Current Referrals</span>
-    </div>
     <div class="card-body p-0">
-        <table class="table mb-0">
-            <thead>
-                <tr>
-                    <th>Pre Or Post sentencing</th>
-                    <th scope="col" style="width: 10%;">First Name</th>
-                    <th scope="col" style="width: 15%;">Last Name</th>
-                    <th scope="col" style="width: 15%;">Recipient Type</th>
-                    <th scope="col" style="width: 15%;">Recipient</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Notes</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody id="referralList">
-                <tr>
-                    <td>Pre</td>
-                    <td>Marcus</td>
-                    <td>Whitfield</td>
-                    <td>Judicial District</td>
-                    <td>14</td>
-                    <td>Pending Decision</td>
-                    <td>Residential Treatment intake pending assessment.</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Post</td>
-                    <td>Alicia</td>
-                    <td>Fernandez</td>
-                    <td>Program</td>
-                    <td>Boulder</td>
-                    <td>Awaiting Stay</td>
-                    <td>Outpatient Services referral, scheduling follow-up.</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Post</td>
-                    <td>Devon</td>
-                    <td>Nakamura</td>
-                    <td>Judicial District</td>
-                    <td>12</td>
-                    <td>Pending Decision</td>
-                    <td>Community Corrections placement under review.</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Pre</td>
-                    <td>Priya</td>
-                    <td>Osei</td>
-                    <td>Judicial District</td>
-                    <td>9</td>
-                    <td>Pending Decision</td>
-                    <td>Residential Treatment bed confirmed for next week.</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Post</td>
-                    <td>Tyrell</td>
-                    <td>Sandoval</td>
-                    <td>Program</td>
-                    <td>El Paso Treatment Center</td>
-                    <td>Awaiting Stay</td>
-                    <td>Outpatient Services, awaiting insurance approval.</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Pre</td>
-                    <td>Hannah</td>
-                    <td>Delacroix</td>
-                    <td>Judicial District</td>
-                    <td>6</td>
-                    <td>Pending Decision</td>
-                    <td>Community Corrections intake completed.</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Post</td>
-                    <td>Isaiah</td>
-                    <td>Brightwater</td>
-                    <td>Program</td>
-                    <td>Pueblo Treatment Services</td>
-                    <td>Pending Decision</td>
-                    <td>Residential Treatment referral submitted for review.</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Pre</td>
-                    <td>Gabriela</td>
-                    <td>Thornton</td>
-                    <td>Judicial District</td>
-                    <td>12</td>
-                    <td>Awaiting Stay</td>
-                    <td>Outpatient Services, first session scheduled.</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="tab-content" id="referralTabsContent">
+            <!-- CURRENT REFERRALS TAB -->
+            <div class="tab-pane fade show active" id="current-referrals-pane" role="tabpanel"
+                aria-labelledby="current-referrals-tab" tabindex="0">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Referral Source</th>
+                            <th scope="col" style="width: 10%;">First Name</th>
+                            <th scope="col" style="width: 15%;">Last Name</th>
+                            <th scope="col" style="width: 15%;">Recipient Type</th>
+                            <th scope="col" style="width: 15%;">Recipient</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Notes</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="referralList">
+                        <tr>
+                            <td>CCIB</td>
+                            <td>Marcus</td>
+                            <td>Whitfield</td>
+                            <td>Judicial District</td>
+                            <td>14</td>
+                            <td>Pending Decision</td>
+                            <td>Residential Treatment intake pending assessment.</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DOC</td>
+                            <td>Devon</td>
+                            <td>Nakamura</td>
+                            <td>Judicial District</td>
+                            <td>12</td>
+                            <td>Pending Decision</td>
+                            <td>Community Corrections placement under review.</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CCIB</td>
+                            <td>Priya</td>
+                            <td>Osei</td>
+                            <td>Judicial District</td>
+                            <td>9</td>
+                            <td>Pending Decision</td>
+                            <td>Residential Treatment bed confirmed for next week.</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CCIB</td>
+                            <td>Hannah</td>
+                            <td>Delacroix</td>
+                            <td>Judicial District</td>
+                            <td>6</td>
+                            <td>Pending Decision</td>
+                            <td>Community Corrections intake completed.</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DOC</td>
+                            <td>Isaiah</td>
+                            <td>Brightwater</td>
+                            <td>Program</td>
+                            <td>Pueblo Treatment Services</td>
+                            <td>Pending Decision</td>
+                            <td>Residential Treatment referral submitted for review.</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- WAITING LIST TAB -->
+            <div class="tab-pane fade" id="waiting-list-pane" role="tabpanel" aria-labelledby="waiting-list-tab"
+                tabindex="0">
+                <table class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Referral Source</th>
+                            <th scope="col" style="width: 10%;">First Name</th>
+                            <th scope="col" style="width: 15%;">Last Name</th>
+                            <th scope="col" style="width: 15%;">Recipient Type</th>
+                            <th scope="col" style="width: 15%;">Recipient</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Notes</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="waitingList">
+                        <tr>
+                            <td>DOC</td>
+                            <td>Alicia</td>
+                            <td>Fernandez</td>
+                            <td>Program</td>
+                            <td>Boulder</td>
+                            <td>Awaiting Stay</td>
+                            <td>Outpatient Services referral, scheduling follow-up.</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DOC</td>
+                            <td>Tyrell</td>
+                            <td>Sandoval</td>
+                            <td>Program</td>
+                            <td>El Paso Treatment Center</td>
+                            <td>Awaiting Stay</td>
+                            <td>Outpatient Services, awaiting insurance approval.</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>CCIB</td>
+                            <td>Gabriela</td>
+                            <td>Thornton</td>
+                            <td>Judicial District</td>
+                            <td>12</td>
+                            <td>Awaiting Stay</td>
+                            <td>Outpatient Services, first session scheduled.</td>
+                            <td>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                    <i class="bi bi-file-earmark-text"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

@@ -5,121 +5,137 @@
         <i class="bi bi-arrow-left me-1"></i> Back to current referrals
     </a>
 
-    <div class="card mb-4">
-        <div class="card-header">Create a Referral</div>
-        <div class="card-body">
-            <form id="referralForm">
-                <div class="row">
-                    <div class="col-12 form-group">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h4 class="mb-0">Client Information</h4>
-                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
-                                data-bs-target="#addClientModal">
-                                <i class="bi bi-person-plus me-1"></i> Add Client
-                            </button>
-                        </div>
-                        <div class="table-responsive mt-3">
-                            <table class="table table-sm align-middle mb-0 table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">SID</th>
-                                        <th scope="col">First Name</th>
-                                        <th scope="col">Last Name</th>
-                                        <th scope="col">DOB</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="selectedClientList">
-                                    <tr id="noClientSelectedRow">
-                                        <td colspan="5" class="text-center text-muted py-3">No client added yet.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+    <form id="referralForm">
+        <!-- CLIENT INFORMATION -->
+        <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Client Information</h5>
+                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#addClientModal">
+                    <i class="bi bi-person-plus me-1"></i> Add Client
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm align-middle mb-0 table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">SID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">DOB</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="selectedClientList">
+                            <tr id="noClientSelectedRow">
+                                <td colspan="5" class="text-center text-muted py-3">No client added yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="row">
-                    <div class="col-12 form-group">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h4 class="mb-0">Proposed Recipient(s)</h4>
-                            <div class="dropdown">
-                                <button type="button" class="btn btn-outline-primary dropdown-toggle" id="addRecipientBtn"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-plus-lg me-1"></i><span data-add-label>Add Recipient</span>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li>
-                                        <button class="dropdown-item" type="button" data-recipient-type="program">
-                                            Program
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button class="dropdown-item" type="button" data-recipient-type="jd">
-                                            Judicial District
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="jdContainer" class="row g-3 mb-3">
-                            <div id="noRecipientRow" class="col-12">
-                                <p class="text-center text-muted py-3 mb-0">No recipients added yet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 form-group">
-                        <h4>Sentencing Information</h4>
-                        <partial data-include="partials/sentencing-information.html"></partial>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-12 form-group">
-                        <label for="notes" class="form-label">Referral Notes</label>
-                        <textarea class="form-control" id="notes" rows="3"></textarea>
-                    </div>
-                </div>
-                    
-                <div class="row">
-                    <div class="col-12 form-group">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h4 class="mb-0">Documents</h4>
-                            <button type="button" class="btn btn-outline-primary" id="uploadDocumentsBtn"
-                                data-bs-toggle="modal" data-bs-target="#uploadDocumentModal">
-                                <i class="bi bi-upload me-1"></i> Upload Documents
-                            </button>
-                        </div>
-                        
-                        <div class="table-responsive mt-3">
-                            <table class="table table-sm align-middle mb-0 table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Document Name</th>
-                                        <th scope="col">Type</th>
-                                        <th scope="col">Uploaded</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="documentList">
-                                    <tr id="noDocumentsRow">
-                                        <td colspan="4" class="text-center text-muted py-3">No documents uploaded yet.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-send me-1"></i> Create Referral
-                        </button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
+
+        <!-- PROPOSED RECIPIENTS -->
+        <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Proposed Recipient(s)</h5>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-sm btn-outline-primary dropdown-toggle" id="addRecipientBtn"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-plus-lg me-1"></i><span data-add-label>Add Recipient</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <button class="dropdown-item" type="button" data-recipient-type="program">
+                                Program
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" type="button" data-recipient-type="jd">
+                                Judicial District
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="jdContainer" class="row g-3">
+                    <div id="noRecipientRow" class="col-12">
+                        <p class="text-center text-muted py-3 mb-0">No recipients added yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICING INFORMATION -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="mb-0">Servicing Information</h5>
+            </div>
+            <div class="card-body">
+                <partial data-include="partials/servicing-information.html"></partial>
+            </div>
+        </div>
+
+        <!-- SENTENCING INFORMATION -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="mb-0">Sentencing Information</h5>
+            </div>
+            <div class="card-body">
+                <partial data-include="partials/sentencing-information.html"></partial>
+            </div>
+        </div>
+
+        <!-- REFERRAL NOTES -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="mb-0">Referral Notes</h5>
+            </div>
+            <div class="card-body">
+                <textarea class="form-control" id="notes" rows="3"></textarea>
+            </div>
+        </div>
+
+        <!-- DOCUMENTS -->
+        <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Documents</h5>
+                <button type="button" class="btn btn-sm btn-outline-primary" id="uploadDocumentsBtn"
+                    data-bs-toggle="modal" data-bs-target="#uploadDocumentModal">
+                    <i class="bi bi-upload me-1"></i> Upload Documents
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm align-middle mb-0 table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Document Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Uploaded</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="documentList">
+                            <tr id="noDocumentsRow">
+                                <td colspan="4" class="text-center text-muted py-3">No documents uploaded yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- STICKY SUBMIT BAR -->
+        <div class="d-flex justify-content-end py-3 border-top bg-body sticky-bottom">
+            <button type="submit" class="btn btn-primary me-2">
+                <i class="bi bi-send me-1"></i> Create Referral
+            </button>
+        </div>
+    </form>
 
     <!-- ADD CLIENT MODAL -->
     <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">

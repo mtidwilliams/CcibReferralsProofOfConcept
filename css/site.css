@@ -31429,6 +31429,23 @@ h5 > .count-badge::after,
   border-bottom: 1px solid #DBDDDD;
 }
 
+/* Keep inactive tab text readable on hover (overrides higher-specificity base color) */
+.nav-tabs .nav-item > button.nav-link:hover,
+.nav-tabs .nav-item > button.nav-link:focus {
+  color: #FFFFFF;
+}
+
+/* Referral tabs sit on top of the card; let the card provide the frame */
+.referral-tabs {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+#referralTabsContent .tab-pane {
+  padding: 0;
+  border: 0;
+}
+
 .toast-wrapper {
   position: fixed;
   z-index: 100;
