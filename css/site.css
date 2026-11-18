@@ -31446,6 +31446,94 @@ h5 > .count-badge::after,
   border: 0;
 }
 
+.referral-progress {
+  min-width: 7rem;
+}
+
+/* Collapsible referral rows */
+.referral-table {
+  font-size: 0.95rem;
+}
+
+.referral-table tbody .referral-row {
+  cursor: pointer;
+}
+
+.referral-table tbody .referral-row:hover {
+  background-color: #f8f9fa;
+}
+
+.referral-table tbody .referral-row.expanded {
+  background-color: #cfe2ff;
+}
+
+.referral-table .expand-icon {
+  transition: transform 0.2s ease;
+}
+
+.referral-table tbody .referral-row.expanded .expand-icon {
+  transform: rotate(90deg);
+}
+
+.referral-details-row td {
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.details-table {
+  border: 1px solid #DBDDDD;
+}
+
+.details-table > thead > tr > th {
+  background: #F1F1F1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-top: 1px solid #DBDDDD;
+  border-bottom: 1px solid #DBDDDD;
+}
+
+.details-table th:nth-child(1),
+.details-table td:nth-child(1) {
+  width: 15%;
+}
+
+.details-table th:nth-child(2),
+.details-table td:nth-child(2) {
+  width: 40%;
+}
+
+.details-table th:nth-child(3),
+.details-table td:nth-child(3) {
+  width: 25%;
+}
+
+.details-table th:nth-child(4),
+.details-table td:nth-child(4) {
+  width: 20%;
+}
+
+.details-table td {
+  vertical-align: middle;
+}
+
+/* Alternative design: Badges for recipients */
+.referral-table-badges {
+  font-size: 0.95rem;
+}
+
+.referral-table-badges th:nth-child(6),
+.referral-table-badges td:nth-child(6) {
+  max-width: 300px;
+}
+
+.referral-table-badges .badge {
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: normal;
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  margin: 0.2rem;
+}
+
 .toast-wrapper {
   position: fixed;
   z-index: 100;

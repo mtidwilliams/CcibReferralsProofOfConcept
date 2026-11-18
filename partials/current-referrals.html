@@ -15,142 +15,339 @@
     </li>
 </ul>
 <div class="card">
-    <div class="card-body p-0">
+    <div class="card-body">
         <div class="tab-content" id="referralTabsContent">
             <!-- CURRENT REFERRALS TAB -->
-            <div class="tab-pane fade show active" id="current-referrals-pane" role="tabpanel"
-                aria-labelledby="current-referrals-tab" tabindex="0">
-                <table class="table mb-0">
+            <div class="tab-pane fade show active" id="current-referrals-pane" role="tabpanel" aria-labelledby="current-referrals-tab" tabindex="0">
+                <div class="mt-5 mb-4">
+                    <h5>Recipients as nested table</h5>
+                    <p class="text-muted small">Shows recipient information as nested rows within each referral. **Cannot build as sortable/filterable table.</p>
+                </div>
+                <table class="table mb-0 referral-table">
                     <thead>
                         <tr>
-                            <th>Referral Source</th>
-                            <th scope="col" style="width: 10%;">First Name</th>
-                            <th scope="col" style="width: 10%;">Last Name</th>
-                            <th scope="col" style="width: 10%;">Recipient JD</th>
-                            <th scope="col" style="width: 15%;">Recipient Program</th>
+                            <th scope="col" style="width: 5%;"></th>
+                            <th scope="col">Referral Source</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
                             <th scope="col">Service Type</th>
                             <th scope="col">Legal Status</th>
-                            <th scope="col">Referral Status</th>
                             <th scope="col">Last Update</th>
-                            <th scope="col">Notes</th>
-                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody id="referralList">
+                        <tr class="referral-row" data-referral-id="1">
+                            <td class="text-center expand-icon"><i class="bi bi-chevron-right"></i></td>
+                            <td>CCIB</td>
+                            <td>Marcus</td>
+                            <td>Whitfield</td>
+                            <td>Residential</td>
+                            <td>Diversion</td>
+                            <td>2026-10-05</td>
+                        </tr>
+                        <tr class="referral-details-row" style="display: none;">
+                            <td colspan="7">
+                                <table class="table table-sm mb-0 details-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Recipient JD</th>
+                                            <th scope="col">Recipient Program</th>
+                                            <th scope="col">Referral Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>04</td>
+                                            <td>ComCor, Inc.</td>
+                                            <td>
+                                                <div class="progress referral-progress" role="progressbar"
+                                                    aria-label="Referral progress" aria-valuenow="15" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar" style="width: 15%">15%</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="referral-row" data-referral-id="2">
+                            <td class="text-center expand-icon"><i class="bi bi-chevron-right"></i></td>
+                            <td>CCIB</td>
+                            <td>Devon</td>
+                            <td>Nakamura</td>
+                            <td>IRT-90</td>
+                            <td>Condition of Probation</td>
+                            <td>2026-10-01</td>
+                        </tr>
+                        <tr class="referral-details-row" style="display: none;">
+                            <td colspan="7">
+                                <table class="table table-sm mb-0 details-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Recipient JD</th>
+                                            <th scope="col">Recipient Program</th>
+                                            <th scope="col">Referral Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>12</td>
+                                            <td>Advantage Treatment Center - Alamosa</td>
+                                            <td>
+                                                <div class="progress referral-progress" role="progressbar"
+                                                    aria-label="Referral progress" aria-valuenow="30" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar" style="width: 30%">30%</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="referral-row" data-referral-id="3">
+                            <td class="text-center expand-icon"><i class="bi bi-chevron-right"></i></td>
+                            <td>DOC</td>
+                            <td>Priya</td>
+                            <td>Osei</td>
+                            <td>Residential</td>
+                            <td>Transition</td>
+                            <td>2026-08-25</td>
+                        </tr>
+                        <tr class="referral-details-row" style="display: none;">
+                            <td colspan="7">
+                                <table class="table table-sm mb-0 details-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Recipient JD</th>
+                                            <th scope="col">Recipient Program</th>
+                                            <th scope="col">Referral Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>19</td>
+                                            <td>ICCS - Weld</td>
+                                            <td>
+                                                <div class="progress referral-progress" role="progressbar"
+                                                    aria-label="Referral progress" aria-valuenow="50" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar" style="width: 50%">50%</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="referral-row" data-referral-id="4">
+                            <td class="text-center expand-icon"><i class="bi bi-chevron-right"></i></td>
+                            <td>CCIB</td>
+                            <td>Hannah</td>
+                            <td>Delacroix</td>
+                            <td>Residential</td>
+                            <td>Diversion</td>
+                            <td>2026-06-05</td>
+                        </tr>
+                        <tr class="referral-details-row" style="display: none;">
+                            <td colspan="7">
+                                <table class="table table-sm mb-0 details-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Recipient JD</th>
+                                            <th scope="col">Recipient Program</th>
+                                            <th scope="col">Referral Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>06</td>
+                                            <td>Advantage Treatment Center - Durango</td>
+                                            <td>
+                                                <div class="progress referral-progress" role="progressbar"
+                                                    aria-label="Referral progress" aria-valuenow="70" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar" style="width: 70%">70%</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="referral-row" data-referral-id="5">
+                            <td class="text-center expand-icon"><i class="bi bi-chevron-right"></i></td>
+                            <td>DOC</td>
+                            <td>Isaiah</td>
+                            <td>Brightwater</td>
+                            <td>Residential</td>
+                            <td>Transition</td>
+                            <td>2026-03-05</td>
+                        </tr>
+                        <tr class="referral-details-row" style="display: none;">
+                            <td colspan="7">
+                                <table class="table table-sm mb-0 details-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Recipient JD</th>
+                                            <th scope="col">Recipient Program</th>
+                                            <th scope="col">Referral Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>02</td>
+                                            <td>Independence House - Pecos</td>
+                                            <td>
+                                                <div class="progress referral-progress" role="progressbar"
+                                                    aria-label="Referral progress" aria-valuenow="85" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar" style="width: 85%">85%</div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
+                                                    <i class="bi bi-file-earmark-text"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- ALTERNATIVE DESIGN: Recipients as Badges -->
+                <div class="mt-5 mb-4">
+                    <h5>Alternative Design Option: Recipients as Badges</h5>
+                    <p class="text-muted small">Shows recipient information inline as badges instead of nested rows. Can be filterable and sortable.</p>
+                </div>
+                <table class="table mb-0 referral-table-badges">
+                    <thead>
+                        <tr>
+                            <th scope="col">Referral Source</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Service Type</th>
+                            <th scope="col">Legal Status</th>
+                            <th scope="col">Recipients</th>
+                            <th scope="col">Last Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>CCIB</td>
                             <td>Marcus</td>
                             <td>Whitfield</td>
-                            <td>14</td>
-                            <td>N/A</td>
                             <td>Residential</td>
                             <td>Diversion</td>
-                            <td>Pending Decision</td>
-                            <td>2026-10-05</td>
-                            <td>Residential Treatment intake pending assessment.</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                                    <i class="bi bi-file-earmark-text"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <span class="badge bg-primary">04 - ComCor, Inc.</span>
+                                <span class="badge bg-primary">04 - Geo-El Paso</span>
+                                <span class="badge bg-danger ms-1">12 - ATC-Alamosa (OOC)</span>
                             </td>
+                            <td>2026-10-05</td>
                         </tr>
                         <tr>
                             <td>CCIB</td>
                             <td>Devon</td>
                             <td>Nakamura</td>
-                            <td>12</td>
-                            <td>N/A</td>
                             <td>IRT-90</td>
                             <td>Condition of Probation</td>
-                            <td>Pending Decision</td>
-                            <td>2026-10-01</td>
-                            <td>Community Corrections placement under review.</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                                    <i class="bi bi-file-earmark-text"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <span class="badge bg-primary">12 - Advantage Treatment Center - Alamosa</span>
                             </td>
+                            <td>2026-10-01</td>
                         </tr>
                         <tr>
                             <td>DOC</td>
                             <td>Priya</td>
                             <td>Osei</td>
-                            <td>9</td>
-                            <td>N/A</td>
                             <td>Residential</td>
                             <td>Transition</td>
-                            <td>Pending Decision</td>
-                            <td>2026-08-25</td>
-                            <td>Residential Treatment bed confirmed for next week.</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                                    <i class="bi bi-file-earmark-text"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <span class="badge bg-primary">19 - ICCS - Weld</span>
                             </td>
+                            <td>2026-08-25</td>
                         </tr>
                         <tr>
                             <td>CCIB</td>
                             <td>Hannah</td>
                             <td>Delacroix</td>
-                            <td>6</td>
-                            <td>N/A</td>
                             <td>Residential</td>
                             <td>Diversion</td>
-                            <td>Pending Decision</td>
-                            <td>2026-06-05</td>
-                            <td>Community Corrections intake completed.</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                                    <i class="bi bi-file-earmark-text"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <span class="badge bg-primary">06 - Advantage Treatment Center - Durango</span>
                             </td>
+                            <td>2026-06-05</td>
                         </tr>
                         <tr>
                             <td>DOC</td>
                             <td>Isaiah</td>
                             <td>Brightwater</td>
-                            <td>02</td>
-                            <td>Pueblo Treatment Services</td>
                             <td>Residential</td>
                             <td>Transition</td>
-                            <td>Pending Decision</td>
-                            <td>2026-03-05</td>
-                            <td>Residential Treatment referral submitted for review.</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
-                                    <i class="bi bi-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Referral">
-                                    <i class="bi bi-file-earmark-text"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Referral">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <span class="badge bg-primary">02 - Independence House - Pecos</span>
                             </td>
+                            <td>2026-03-05</td>
                         </tr>
                     </tbody>
                 </table>
@@ -169,7 +366,7 @@
                             <th scope="col">Service Type</th>
                             <th scope="col">Legal Status</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Notes</th>
+                            <th scope="col">Estimated Placement Date</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -178,12 +375,12 @@
                             <td>DOC</td>
                             <td>Alicia</td>
                             <td>Fernandez</td>
-                            <td>14</td>
-                            <td>Boulder</td>
+                            <td>04</td>
+                            <td>ComCor, Inc</td>
                             <td>Residential</td>
                             <td>Transition</td>
-                            <td>Awaiting Stay</td>
-                            <td>Outpatient Services referral, scheduling follow-up.</td>
+                            <td>Waiting Placement</td>
+                            <td>2024-07-01</td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
                                     <i class="bi bi-eye"></i>
@@ -201,11 +398,11 @@
                             <td>Tyrell</td>
                             <td>Sandoval</td>
                             <td>12</td>
-                            <td>El Paso Treatment Center</td>
+                            <td>ATC - Alamosa</td>
                             <td>Residential</td>
                             <td>Diversion</td>
-                            <td>Awaiting Stay</td>
-                            <td>Outpatient Services, awaiting insurance approval.</td>
+                            <td>Approved Pending Sentencing</td>
+                            <td>N/A</td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
                                     <i class="bi bi-eye"></i>
@@ -222,12 +419,12 @@
                             <td>CCIB</td>
                             <td>Gabriela</td>
                             <td>Thornton</td>
-                            <td>12</td>
-                            <td>N/A</td>
+                            <td>06</td>
+                            <td>ATC - Durango</td>
                             <td>IRT-90</td>
                             <td>Condition of Probation</td>
-                            <td>Awaiting Stay</td>
-                            <td>Outpatient Services, first session scheduled.</td>
+                            <td>Awaiting Bed Assignment</td>
+                            <td>2026-12-01</td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Packet">
                                     <i class="bi bi-eye"></i>

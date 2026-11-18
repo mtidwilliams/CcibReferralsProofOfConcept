@@ -31,6 +31,31 @@
     <script src="js/app.js"></script>
     <script src="js/includes.js"></script>
     <script src="js/feature.js"></script>
+    <script>
+        document.addEventListener('partials:loaded', () => {
+            const referralTable = document.querySelector('.referral-table');
+            if (!referralTable) return;
+
+            const referralRows = referralTable.querySelectorAll('.referral-row');
+            
+            referralRows.forEach((row) => {
+                row.addEventListener('click', () => {
+                    const detailsRow = row.nextElementSibling;
+                    if (!detailsRow || !detailsRow.classList.contains('referral-details-row')) return;
+                    
+                    const isExpanded = row.classList.contains('expanded');
+                    
+                    if (isExpanded) {
+                        row.classList.remove('expanded');
+                        detailsRow.style.display = 'none';
+                    } else {
+                        row.classList.add('expanded');
+                        detailsRow.style.display = 'table-row';
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 

@@ -41,24 +41,9 @@
         <div class="card mb-3">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">Proposed Recipient(s)</h5>
-                <div class="dropdown">
-                    <button type="button" class="btn btn-sm btn-outline-primary dropdown-toggle" id="addRecipientBtn"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-plus-lg me-1"></i><span data-add-label>Add Recipient</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li>
-                            <button class="dropdown-item" type="button" data-recipient-type="program">
-                                Program
-                            </button>
-                        </li>
-                        <li>
-                            <button class="dropdown-item" type="button" data-recipient-type="jd">
-                                Judicial District
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+                <button type="button" class="btn btn-sm btn-outline-primary" id="addRecipientBtn">
+                    <i class="bi bi-plus-lg me-1"></i> Add Recipient
+                </button>
             </div>
             <div class="card-body">
                 <div id="jdContainer" class="row g-3">
