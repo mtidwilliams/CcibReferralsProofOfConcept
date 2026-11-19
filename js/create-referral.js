@@ -33,7 +33,7 @@ document.addEventListener('partials:loaded', () => {
         card.className = 'card border p-3';
 
         const header = document.createElement('div');
-        header.className = 'd-flex justify-content-end align-items-end mb-3';
+        header.className = 'd-flex justify-content-end align-items-end mb-0';
 
         const removeBtn = document.createElement('button');
         removeBtn.type = 'button';
