@@ -69,7 +69,7 @@ document.addEventListener('partials:loaded', () => {
         jdPlaceholder.textContent = 'Select a JD…';
         jdSelect.appendChild(jdPlaceholder);
 
-        Object.keys(jdProgramMap).forEach(jd => {
+        Object.keys(jdProgramMap).sort((a, b) => Number(a) - Number(b)).forEach(jd => {
             const option = document.createElement('option');
             option.value = jd;
             option.textContent = jdProgramMap[jd].name;
