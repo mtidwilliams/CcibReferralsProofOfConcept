@@ -17,5 +17,11 @@ async function loadIncludes(root) {
 
 document.addEventListener('DOMContentLoaded', async () => {
     await loadIncludes(document);
+    // Bootstrap tooltips are opt-in, so initialize them once partial markup exists.
+    if (window.bootstrap) {
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((el) => {
+            bootstrap.Tooltip.getOrCreateInstance(el);
+        });
+    }
     document.dispatchEvent(new CustomEvent('partials:loaded'));
 });

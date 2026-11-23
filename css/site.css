@@ -31791,3 +31791,35 @@ ul:has(li > div.budget-edit-timeline) {
   background-color: #e7f1ff !important;
   color: #0c63e4 !important;
 }
+
+.program-multiselect-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  min-height: calc(1.5em + 0.75rem + 2px);
+  cursor: pointer;
+}
+
+.program-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 500;
+  white-space: normal;
+  text-align: left;
+}
+
+.program-chip .btn-close {
+  width: 0.5em;
+  height: 0.5em;
+  padding: 0;
+  background-size: 0.5em;
+}
+
+.program-multiselect .dropdown-menu .form-check {
+  padding-left: 2.25rem;
+}
+
+.program-multiselect .dropdown-menu .form-check:hover {
+  background-color: #f8f9fa;
+}
