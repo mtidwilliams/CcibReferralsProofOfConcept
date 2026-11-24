@@ -1,0 +1,87 @@
+<!-- MAIN -->
+<main id="main" class="p-4">
+    <h1 class="h3 mb-4">Client Transfers</h1>
+    <a class="btn btn-primary mb-4" href="create-transfer.html">
+        <i class="bi bi-plus me-1"></i> Create Transfer
+    </a>
+
+    <!-- CURRENT TRANSFER REQUESTS -->
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Current Transfer Requests</h5>
+        </div>
+        <div class="card-body">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">Client Name</th>
+                        <th scope="col">Transfer Source</th>
+                        <th scope="col">Transfer Recipient</th>
+                        <th scope="col">Service Type Source</th>
+                        <th scope="col">Legal Status Source</th>
+                        <th scope="col">Service Type Destination</th>
+                        <th scope="col">Legal Status Destination</th>
+                        <th scope="col">Expected Transfer Date</th>
+                        <th scope="col" style="width: 130px;">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="transferRequestList">
+                    <tr>
+                        <td>Darnell Okafor</td>
+                        <td>04 - ComCor, Inc.</td>
+                        <td>02 - IMPACT Center</td>
+                        <td>Residential</td>
+                        <td>Diversion</td>
+                        <td>Non-Residential</td>
+                        <td>Parole</td>
+                        <td>2026-12-08</td>
+                        <td class="text-nowrap">
+                            <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Transfer">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Transfer">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Renee Castillo</td>
+                        <td>12 - ATC - Alamosa</td>
+                        <td>06 - ATC - Durango</td>
+                        <td>IRT-90</td>
+                        <td>Condition of Probation</td>
+                        <td>Non-Residential</td>
+                        <td>Parole</td>
+                        <td>2026-12-15</td>
+                        <td class="text-nowrap">
+                            <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Transfer">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Transfer">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wesley Hartman</td>
+                        <td>18 - CoreCivic - Centennial Community Transition Center</td>
+                        <td>04 - Geo-El Paso</td>
+                        <td>Residential</td>
+                        <td>Transition</td>
+                        <td>Non-Residential</td>
+                        <td>Parole</td>
+                        <td>2027-01-05</td>
+                        <td class="text-nowrap">
+                            <button type="button" class="btn btn-sm btn-outline-primary me-1" title="View Transfer">
+                                <i class="bi bi-file-earmark-text"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-danger" title="Delete Transfer">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

@@ -91,12 +91,17 @@
             </a>
         </li>
 
-        <!-- NEW FEATURE -->
-        <li class="nav-item active">
+        <!-- NEW FEATURE: "active" is set by includes.js using each item's data-nav-pages -->
+        <li class="nav-item" data-nav-pages="index.html create-referrals.html workflow-management.html">
             <a class="nav-link" href="index.html">
                 <i class="bi bi-signpost-split-fill"></i>
                 <span class="ms-3 sidebar-nav-text">Referrals</span>
-                <span class="visually-hidden">Current Page</span>
+            </a>
+        </li>
+        <li class="nav-item" data-nav-pages="transfers.html create-transfer.html">
+            <a class="nav-link" href="transfers.html">
+                <i class="bi bi-arrow-left-right"></i>
+                <span class="ms-3 sidebar-nav-text">Transfers</span>
             </a>
         </li>
 

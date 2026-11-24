@@ -1,0 +1,230 @@
+<!-- MAIN -->
+<main id="main" class="p-4">
+    <h1 class="h3 mb-4">Create a Transfer</h1>
+    <a class="btn btn-outline-primary mb-4" href="transfers.html">
+        <i class="bi bi-arrow-left me-1"></i> Back to transfers
+    </a>
+
+    <form id="transferForm">
+        <!-- CLIENT INFORMATION -->
+        <div class="card mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Client Information</h5>
+                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#addClientModal">
+                    <i class="bi bi-person-plus me-1"></i> Add Client
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-sm align-middle mb-0 table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">SID</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">DOB</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="selectedClientList">
+                            <tr id="noClientSelectedRow">
+                                <td colspan="5" class="text-center text-muted py-3">No client added yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSFER SOURCE -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="mb-0">Transfer Source</h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-2">
+                        <label for="sourceJd" class="form-label">Judicial District (JD)</label>
+                        <select class="form-select" id="sourceJd" name="SourceJd" data-program-target="sourceProgram"
+                            required>
+                            <option value="" disabled selected>Select a JD…</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="sourceProgram" class="form-label">Program</label>
+                        <select class="form-select" id="sourceProgram" name="SourceProgram" required disabled>
+                            <option value="" disabled selected>Select a JD first…</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="sourceServiceType" class="form-label">Service Type</label>
+                        <select class="form-select" id="sourceServiceType" name="SourceServiceType" required>
+                            <option value="" disabled selected>Select One</option>
+                            <option value="001">Residential</option>
+                            <option value="002">Non-residential</option>
+                            <option value="003">CoP-IRT-90</option>
+                            <option value="004">SXO</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="sourceLegalStatus" class="form-label">Legal Status</label>
+                        <select class="form-select" id="sourceLegalStatus" name="SourceLegalStatus" required>
+                            <option value="" disabled selected>Select One</option>
+                            <option value="001">Diversion</option>
+                            <option value="002">Condition of Probation</option>
+                            <option value="003">ISP-I</option>
+                            <option value="004">Parole</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSFER RECIPIENT -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="mb-0">Transfer Recipient</h5>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-2">
+                        <label for="destinationJd" class="form-label">Judicial District (JD)</label>
+                        <select class="form-select" id="destinationJd" name="DestinationJd"
+                            data-program-target="destinationProgram" required>
+                            <option value="" disabled selected>Select a JD…</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="destinationProgram" class="form-label">Program</label>
+                        <select class="form-select" id="destinationProgram" name="DestinationProgram" required
+                            disabled>
+                            <option value="" disabled selected>Select a JD first…</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="destinationServiceType" class="form-label">Service Type</label>
+                        <select class="form-select" id="destinationServiceType" name="DestinationServiceType"
+                            required>
+                            <option value="" disabled selected>Select One</option>
+                            <option value="001">Residential</option>
+                            <option value="002">Non-residential</option>
+                            <option value="003">CoP-IRT-90</option>
+                            <option value="004">SXO</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="destinationLegalStatus" class="form-label">Legal Status</label>
+                        <select class="form-select" id="destinationLegalStatus" name="DestinationLegalStatus"
+                            required>
+                            <option value="" disabled selected>Select One</option>
+                            <option value="001">Diversion</option>
+                            <option value="002">Condition of Probation</option>
+                            <option value="003">ISP-I</option>
+                            <option value="004">Parole</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="expectedTransferDate" class="form-label">Expected Transfer Date</label>
+                        <input type="date" class="form-control" id="expectedTransferDate"
+                            name="ExpectedTransferDate" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSFER NOTES -->
+        <div class="card mb-3">
+            <div class="card-header">
+                <h5 class="mb-0">Transfer Notes</h5>
+            </div>
+            <div class="card-body">
+                <textarea class="form-control" id="notes" name="Notes" rows="3"></textarea>
+            </div>
+        </div>
+
+        <!-- STICKY SUBMIT BAR -->
+        <div class="d-flex justify-content-end py-3 border-top bg-body sticky-bottom">
+            <button type="submit" class="btn btn-primary me-2">
+                <i class="bi bi-send me-1"></i> Create Transfer
+            </button>
+        </div>
+    </form>
+
+    <!-- ADD CLIENT MODAL -->
+    <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addClientModalLabel">Add Client</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="clientSid" class="form-label">SID</label>
+                        <input type="text" class="form-control" id="clientSid"
+                            placeholder="Start typing a SID to search…" autocomplete="off">
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0 table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">SID</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">DOB</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientSearchResults">
+                                <tr id="noClientResultsRow">
+                                    <td colspan="5" class="text-center text-muted py-4">
+                                        Start typing a SID to search for clients.
+                                    </td>
+                                </tr>
+                                <!-- Placeholder sample results (no database connected yet) -->
+                                <tr>
+                                    <td>SID-100234</td>
+                                    <td>Darnell</td>
+                                    <td>Okafor</td>
+                                    <td>1986-03-17</td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Select Client">
+                                            <i class="bi bi-check-lg me-1"></i> Select
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SID-100987</td>
+                                    <td>Renee</td>
+                                    <td>Castillo</td>
+                                    <td>1992-11-04</td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Select Client">
+                                            <i class="bi bi-check-lg me-1"></i> Select
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SID-101455</td>
+                                    <td>Wesley</td>
+                                    <td>Hartman</td>
+                                    <td>1980-06-25</td>
+                                    <td>
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Select Client">
+                                            <i class="bi bi-check-lg me-1"></i> Select
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Add New Client</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

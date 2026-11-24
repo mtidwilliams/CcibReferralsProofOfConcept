@@ -15,8 +15,22 @@ async function loadIncludes(root) {
     }));
 }
 
+// The sidebar is shared, so highlight whichever item lists the current page.
+function markCurrentNavItem() {
+    const page = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('[data-nav-pages]').forEach((item) => {
+        if (!item.dataset.navPages.split(' ').includes(page)) return;
+        item.classList.add('active');
+        const hint = document.createElement('span');
+        hint.className = 'visually-hidden';
+        hint.textContent = 'Current Page';
+        item.querySelector('.nav-link')?.appendChild(hint);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     await loadIncludes(document);
+    markCurrentNavItem();
     // Bootstrap tooltips are opt-in, so initialize them once partial markup exists.
     if (window.bootstrap) {
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((el) => {

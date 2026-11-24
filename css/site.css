@@ -30491,8 +30491,8 @@ question-circle: 
 }
 
 #content {
-  width: calc(100% - 12rem);
-  margin-left: 12rem;
+  width: calc(100% - 15rem);
+  margin-left: 15rem;
   transition: all 0.4s;
   min-height: 100vh;
   border-left: 1px solid #DBDDDD;
@@ -30587,7 +30587,7 @@ question-circle: 
 }
 #sidebar {
   min-width: 12rem;
-  width: 12rem;
+  width: 15rem;
   height: 100vh;
   position: fixed;
   top: 0;
